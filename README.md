@@ -19,10 +19,9 @@ After docker build, just open your browser in url: http://localhost:8080
 
 For use without docker compose, execute the following steps:
 
-` 
-git clone https://github.com/ThiagoBfim/pfa-docker
-cd pfa-docker
-./up.sh
-
-`
+``` 
+    git clone https://github.com/ThiagoBfim/pfa-docker
+    cd pfa-docker
+    ./up.sh
+```
 ### now you can open http://localhost:8080
