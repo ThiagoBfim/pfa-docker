@@ -17,7 +17,7 @@ This project is a aceleration bonus course for Full Cycle Developer course.
 After docker build, just open your browser in url: http://localhost:8080
 
 
-For use withou docker compose, execute the following steps:
+For use without docker compose, execute the following steps:
 
 
 `docker network create --driver nat pfa `\
