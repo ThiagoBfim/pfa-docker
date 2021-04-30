@@ -10,16 +10,30 @@ services:
       - MYSQL_ROOT_PASSWORD=my-secret-pw
     ports:
       - 3306:3306
+    networks:
+      - rede-externa
+      - rede-interna
   web:
     build: ./app
     volumes:
       - ./app:/home/app
     depends_on:
       - mysql
+    networks:
+      - rede-externa
+      - rede-interna
 
   nginx:
     build: ./nginx
     ports:
-        - 8080:80
+        - 8000:80
     depends_on:
         - web
+    networks:
+      - rede-externa
+
+networks:
+  rede-externa:
+    driver: bridge
+  rede-interna:
+    driver: bridge

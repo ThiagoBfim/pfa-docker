@@ -11,7 +11,7 @@ do
   sleep 20
 done
 
-docker exec -i mysql sh -c 'exec mysql -uroot -p"my-secret-pw"' < ./database/init.sql
+docker exec -i mysql sh -c 'exec mysql --default-character-set=utf8 -uroot -p"my-secret-pw"' < ./database/init.sql
 
 echo "Creating app"
 docker build -t quarkus-api ./app

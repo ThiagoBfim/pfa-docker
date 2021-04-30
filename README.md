@@ -10,11 +10,16 @@ This project is a aceleration bonus course for Full Cycle Developer course.
 * Front-end with Angular
 
 
+<p align="center">
+  <img align="center" src="/images/system.png" width="800" border="0">
+</p>
+
+
 ## Running the application
 
 ` docker compose up `
 
-After docker build, just open your browser in url: http://localhost:8080
+After docker build, just open your browser in url: http://localhost:8000
 
 
 For use without docker compose, execute the following steps:
@@ -24,4 +29,6 @@ For use without docker compose, execute the following steps:
     cd pfa-docker
     ./up.sh
 ```
-### now you can open http://localhost:8080
+
+Now you can open http://localhost:8080
+
