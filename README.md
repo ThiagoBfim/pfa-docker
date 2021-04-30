@@ -9,9 +9,9 @@ This project is a aceleration bonus course for Full Cycle Developer course.
 * API with Quarkus
 * Front-end with Angular
 
-After docker build, juste open your browser in url: http://localhost:8080
-
 
 ## Running the application
 
-docker compose up
+` docker compose up `
+
+After docker build, just open your browser in url: http://localhost:8080
