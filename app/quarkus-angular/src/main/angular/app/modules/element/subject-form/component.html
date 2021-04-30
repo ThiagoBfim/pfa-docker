@@ -1,0 +1,37 @@
+<h2>Novo Módulo</h2>
+<hr />
+<form [formGroup]="elementForm">
+  <div class="m-2 row">
+    <div class="col-md">
+      <input class="form-control"
+              placeholder="Módulo"
+              required="required"
+              type="text"
+              formControlName="name"
+              [class.is-invalid]="name.invalid && name.touched" />
+    </div>
+  </div>
+  <div class="m-2 row">
+    <div class="col-md">
+      <input autofocus="autofocus"
+             class="form-control"
+             max="120"
+             min="1"
+             placeholder="Quantidade de Horas"
+             required="required"
+             type="number"
+             formControlName="hours"
+             [class.is-invalid]="hours.invalid && hours.touched" />
+    </div>
+  </div>
+  <div class="m-2 row">
+    <div class="col-md">
+      <button class="btn btn-primary" type="reset">Reset</button>
+    </div>
+    <div class="col-md">
+      <button class="btn btn-success float-right"
+              [disabled]="elementForm.invalid"
+              (click)="add()">Add</button>
+    </div>
+  </div>
+</form>
