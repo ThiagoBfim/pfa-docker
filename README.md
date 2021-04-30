@@ -19,15 +19,10 @@ After docker build, just open your browser in url: http://localhost:8080
 
 For use without docker compose, execute the following steps:
 
+` 
+git clone https://github.com/ThiagoBfim/pfa-docker
+cd pfa-docker
+./up.sh
 
-`docker network create --driver nat pfa `\
-`docker run --network pfa --name mysql -p3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:5.7 `\
-`docker exec -i mysql sh -c 'exec mysql -uroot -p"my-secret-pw"' < ./database/init.sql `
-
-`docker build -t quarkus-api ./app `\
-`docker run --network pfa --name=web  -d quarkus-api ` 
- 
-`docker build -t nginx ./nginx `\
-`docker run --network pfa --name=nginx -d -p 8080:80 nginx `
-
-
+`
+### now you can open http://localhost:8080
