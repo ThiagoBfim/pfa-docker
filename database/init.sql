@@ -4,7 +4,7 @@ create TABLE DB_PFA.TB_SUBJECTS (
                                     CO_SUBJECT BIGINT AUTO_INCREMENT PRIMARY KEY,
                                     DS_SUBJECT VARCHAR(255),
                                     NU_HRS NUMERIC
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO DB_PFA.TB_SUBJECTS (CO_SUBJECT, DS_SUBJECT, NU_HRS) VALUES (1, 'Docker', 12);
 INSERT INTO DB_PFA.TB_SUBJECTS (CO_SUBJECT, DS_SUBJECT, NU_HRS) VALUES (2, 'Fundamentos de Arquitetura de Software', 20);

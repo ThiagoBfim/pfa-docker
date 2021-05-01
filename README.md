@@ -14,10 +14,16 @@ This project is a aceleration bonus course for Full Cycle Developer course.
 
 ## Running the application with Compose
 
-` docker compose up `
+` docker-compose up `
 
 After docker build, just open your browser in url: http://localhost:8000
 
+### Rollback
+
+```
+     docker-compose down
+     rm -rf dbdata/
+```
 
 ## Running the application without Compose
 
