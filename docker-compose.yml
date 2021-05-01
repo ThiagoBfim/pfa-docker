@@ -13,15 +13,25 @@ services:
       - 3306:3306
     networks:
       - rede-interna
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
   web:
     build: ./app
     volumes:
       - ./app:/home/app
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
     networks:
       - rede-externa
       - rede-interna
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      timeout: 10s
+      retries: 5
 
   nginx:
     build: ./nginx
@@ -29,12 +39,15 @@ services:
         - 8000:80
         - 8080:80
     depends_on:
-        - web
+      web:
+        condition: service_healthy
     networks:
       - rede-externa
+    restart: on-failure
 
 networks:
   rede-externa:
     driver: bridge
   rede-interna:
     driver: bridge
+    internal: true
